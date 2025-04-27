@@ -1,0 +1,12 @@
+spring:
+  profiles:
+    active: default
+  jackson:
+    default-property-inclusion: non_null
+  messages:
+    encoding: UTF-8
+
+logging:
+  level:
+    root: INFO
+    org.springframework.web: INFO
