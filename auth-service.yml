@@ -41,7 +41,7 @@ cloud:
       access-key: ${AWS_S3_PROFILE_ACCESS}
       secret-key: ${AWS_S3_PROFILE_SECRET}
     region:
-      static: ap-northeast-2
+      static: ${AWS_REGIN_STATIC}
     s3:
       bucket: ${AWS_S3_PROFILE_NAME}
 
