@@ -1,27 +1,27 @@
 server:
-  port: AUTH_SERVICE_PORT
+  port: auth_service_port
 
 spring:
   application:
     name: auth-service
 
   datasource:
-    url: AUTH_DATASOURCE_URL
-    username: AUTH_MYSQL_NAME
-    password: AUTH_MYSQL_PASSWORD
+    url: auth_datasource_url
+    username: auth_mysql_name
+    password: auth_mysql_password
     driver-class-name: com.mysql.cj.jdbc.Driver
 
   data:
     redis:
-      host: REDIS_HOST
-      port: REDIS_PORT
-      password: REDIS_PASSWORD
+      host: redis_host
+      port: redis_port
+      password: redis_password
 
   mail:
     host: smtp.gmail.com
     port: 587
-    username: GMAIL_ID
-    password: GMAIL_PASSWORD
+    username: gmail_id
+    password: gmail_password
     properties:
       mail:
         smtp:
@@ -35,19 +35,19 @@ spring:
       max-request-size: 15MB
 
 naver:
-  client-id: NAVER_ID
-  client-secret: NAVER_PASSWORD
-  redirect-uri: NAVER_REDIRECT
+  client-id: naver_id
+  client-secret: naver_password
+  redirect-uri: naver_redirect
 
 cloud:
   aws:
     credentials:
-      access-key: AWS_S3_PROFILE_ACCESS
-      secret-key: AWS_S3_PROFILE_SECRET
+      access-key: aws_s3_profile_access
+      secret-key: aws_s3_profile_secret
     region:
-      static: AWS_REGIN_STATIC
+      static: aws_regin_static
     s3:
-      bucket: AWS_S3_PROFILE_NAME
+      bucket: aws_s3_profile_name
 
 mybatis:
   mapper-locations: classpath:mappers/*.xml
@@ -57,8 +57,8 @@ badword:
   file-path: word_list.json
 
 jwt:
-  issuer: JWT_ISSUER
-  secret_key: JWT_SECRET_KEY
+  issuer: jwt_issuer
+  secret_key: jwt_secret_key
 
 springdoc:
   api-docs:
