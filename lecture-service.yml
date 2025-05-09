@@ -1,0 +1,50 @@
+server:
+  port: ${LECTURE_SERVICE_PORT}
+
+spring:
+  web:
+    resources:
+      add-mappings: false
+
+  application:
+    name: lecture-service
+
+  datasource:
+    url: ${LECTURE_DATASOURCE_URL}
+    username: ${LECTURE_MYSQL_NAME}
+    password: ${LECTURE_MYSQL_PASSWORD}
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 200MB
+      max-request-size: 250MB
+
+cloud:
+  aws:
+    credentials:
+      access-key: ${AWS_S3_LECTURE_ACCESS}
+      secret-key: ${AWS_S3_LECTURE_SECRET}
+    region:
+      static: ${AWS_REGIN_STATIC}
+    stack:
+      auto: false
+    s3:
+      bucket: ${AWS_S3_LECTURE_NAME}
+
+file:
+  upload-dir: "C:/upload_files"
+
+team:
+  auth-service-url: ${AUTH_SERVICE_URL}
+
+logging:
+  level:
+    org.springframework.cloud.vault: DEBUG
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE

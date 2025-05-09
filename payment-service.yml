@@ -1,0 +1,55 @@
+server:
+  port: ${PAYMENT_SERVICE_PORT}
+
+spring:
+  application:
+    name: payment-service
+
+  r2dbc:
+    url: ${PAYMENT_DATASOURCE_URL}
+    username: ${PAYMENT_MYSQL_NAME}
+    password: ${PAYMENT_MYSQL_PASSWORD}
+
+  cloud:
+    function:
+      definition: verified;rollBacked
+    stream:
+      bindings:
+        verified-in-0:
+          destination: verify-response
+          group: ${spring.application.name}
+        rollBacked-in-0:
+          destination: rollback-response
+          group: ${spring.application.name}
+        verify-out-0:
+          destination: verify-request
+        rollback-out-0:
+          destination: rollback-request
+      rabbit:
+        bindings:
+          verify-out-0:
+            producer:
+              transacted: true
+          rollback-out-0:
+            producer:
+              transacted: true
+
+  rabbitmq:
+    host: ${PAYMENT_RABBITMQ_HOST}
+    port: ${PAYMENT_RABBITMQ_PORT}
+    username: ${PAYMENT_RABBITMQ_NAME}
+    password: ${PAYMENT_RABBITMQ_PASSWORD}
+
+webclient:
+  portone-uri: ${PORTONE_URL}
+  lecture-uri: ${LECTURE_URL}
+
+portone:
+  imp-key: ${PORTONE_KEY}
+  imp-secret: ${PORTONE_SECRET}
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html

@@ -1,0 +1,30 @@
+server:
+  port: ${VERIFICATION_SERVICE_PORT}
+
+spring:
+  application:
+    name: verification-service
+
+  cloud:
+    function:
+      definition: verify
+    stream:
+      bindings:
+        verify-in-0:
+          destination: verify-request
+          group: ${spring.application.name}
+        verify-out-0:
+          destination: verify-response
+
+  rabbitmq:
+    host: ${VERIFICATION_RABBITMQ_HOST}
+    port: ${VERIFICATION_RABBITMQ_PORT}
+    username: ${VERIFICATION_RABBITMQ_NAME}
+    password: ${VERIFICATION_RABBITMQ_PASSWORD}
+
+webclient:
+  portone-uri: ${VERIFICATION_URL}
+
+portone:
+  imp-key: ${VERIFICATION_KEY}
+  imp-secret: ${VERIFICATION_SECRET}
