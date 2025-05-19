@@ -1,27 +1,27 @@
 server:
-  port: 0  # 의미 없는 기본값
+  port: 9001
 
 spring:
   application:
     name: auth-service
 
   datasource:
-    url: ""
-    username: ""
-    password: ""
+    url: jdbc:mysql://localhost:3307/user
+    username: ${vault.auth-service.db-username}
+    password: ${vault.auth-service.db-password}
     driver-class-name: com.mysql.cj.jdbc.Driver
 
   data:
     redis:
-      host: ""
-      port: 0
-      password: ""
+      host: localhost
+      port: 6379
+      password: ${vault.auth-service.redis-password}
 
   mail:
     host: smtp.gmail.com
     port: 587
-    username: ""
-    password: ""
+    username: ${vault.auth-service.mail-username}
+    password: ${vault.auth-service.mail-password}
     properties:
       mail:
         smtp:
@@ -35,19 +35,19 @@ spring:
       max-request-size: 15MB
 
 naver:
-  client-id: ""
-  client-secret: ""
-  redirect-uri: ""
+  client-id: ${vault.auth-service.naver-client-id}
+  client-secret: ${vault.auth-service.naver-client-secret}
+  redirect-uri: http://localhost:8080/login/oauth2/redirect
 
 cloud:
   aws:
     credentials:
-      access-key: ""
-      secret-key: ""
+      access-key: ${vault.auth-service.aws-access-key}
+      secret-key: ${vault.auth-service.aws-secret-key}
     region:
-      static: ""
+      static: ap-northeast-2
     s3:
-      bucket: ""
+      bucket: aigongbu-profile-2324
 
 mybatis:
   mapper-locations: classpath:mappers/*.xml
@@ -57,8 +57,8 @@ badword:
   file-path: word_list.json
 
 jwt:
-  issuer: ""
-  secret_key: ""
+  issuer: ${vault.auth-service.jwt-issuer}
+  secret_key: ${vault.auth-service.jwt-secret}
 
 springdoc:
   api-docs:
