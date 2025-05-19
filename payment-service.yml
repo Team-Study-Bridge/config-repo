@@ -1,15 +1,13 @@
 server:
-  port: ${PAYMENT_SERVICE_PORT}
+  port: 9002
 
 spring:
   application:
     name: payment-service
-
   r2dbc:
-    url: ${PAYMENT_DATASOURCE_URL}
-    username: ${PAYMENT_MYSQL_NAME}
-    password: ${PAYMENT_MYSQL_PASSWORD}
-
+    url: r2dbc:mysql://localhost:3307/order
+    username: ${vault.payment-service.db-username}
+    password: ${vault.payment-service.db-password}
   cloud:
     function:
       definition: verified;rollBacked
@@ -35,18 +33,18 @@ spring:
               transacted: true
 
   rabbitmq:
-    host: ${PAYMENT_RABBITMQ_HOST}
-    port: ${PAYMENT_RABBITMQ_PORT}
-    username: ${PAYMENT_RABBITMQ_NAME}
-    password: ${PAYMENT_RABBITMQ_PASSWORD}
+    host: localhost
+    port: 5672
+    username: ${vault.payment-service.rabbit-username}
+    password: ${vault.payment-service.rabbit-password}
 
 webclient:
-  portone-uri: ${PORTONE_URL}
-  lecture-uri: ${LECTURE_URL}
+  portone-uri: https://api.iamport.kr
+  lecture-uri: http://localhost:9004
 
 portone:
-  imp-key: ${PORTONE_KEY}
-  imp-secret: ${PORTONE_SECRET}
+  imp-key: ${vault.payment-service.portone-imp-key}
+  imp-secret: ${vault.payment-service.portone-imp-secret}
 
 springdoc:
   api-docs:
