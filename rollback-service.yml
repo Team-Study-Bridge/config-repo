@@ -1,6 +1,6 @@
 server:
   port: 9007
-g
+
 spring:
   application:
     name: rollback-service
