@@ -1,7 +1,4 @@
 spring:
-  profiles:
-    active: default
-
   application:
     name: auth-service
 
