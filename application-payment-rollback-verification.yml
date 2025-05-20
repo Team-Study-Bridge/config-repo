@@ -1,0 +1,6 @@
+webclient:
+  portone-uri: https://api.iamport.kr
+
+portone:
+  imp-key: ${portone-imp-key}
+  imp-secret: ${portone-imp-secret}

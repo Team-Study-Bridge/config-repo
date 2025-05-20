@@ -1,12 +1,67 @@
 spring:
   profiles:
     active: default
+
   jackson:
     default-property-inclusion: non_null
+
   messages:
     encoding: UTF-8
+
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      password: ${redis-password}
+
+  datasource:
+    url: jdbc:mysql://localhost:3307/default
+    username: ${db-username}
+    password: ${db-password}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: ${mail-username}
+    password: ${mail-password}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+  cloud:
+    aws:
+      credentials:
+        access-key: ${aws-access-key}
+        secret-key: ${aws-secret-key}
+      region:
+        static: ap-northeast-2
+      s3:
+        bucket: aigongbu-default-bucket
+
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: ${rabbit-username}
+    password: ${rabbit-password}
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
 
 logging:
   level:
     root: INFO
     org.springframework.web: INFO
+    org.springframework.security.web.FilterChainProxy: INFO
+    org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping: INFO
+    org.springframework.cloud.gateway: INFO
+    org.springframework.cloud.vault: INFO
+    org.hibernate.SQL: INFO
+    org.hibernate.type.descriptor.sql.BasicBinder: WARN
+    com.example.gatewayservice: INFO
+    reactor.netty: INFO
+    org.springframework.http.server.reactive: INFO
