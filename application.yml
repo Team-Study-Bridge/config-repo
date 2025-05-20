@@ -1,4 +1,8 @@
+
 spring:
+  profiles:
+    active: default
+
   jackson:
     default-property-inclusion: non_null
 
