@@ -20,18 +20,6 @@ spring:
     password: ${db-password}
     driver-class-name: com.mysql.cj.jdbc.Driver
 
-  mail:
-    host: smtp.gmail.com
-    port: 587
-    username: ${mail-username}
-    password: ${mail-password}
-    properties:
-      mail:
-        smtp:
-          auth: true
-          starttls:
-            enable: true
-
   cloud:
     aws:
       credentials:
@@ -52,16 +40,20 @@ springdoc:
   swagger-ui:
     path: /swagger-ui.html
 
+webclient:
+  portone-uri: https://api.iamport.kr
+
+portone:
+  imp-key: ${portone-imp-key}
+  imp-secret: ${portone-imp-secret}
+
 logging:
   level:
     root: INFO
     org.springframework.web: INFO
     org.springframework.security.web.FilterChainProxy: INFO
     org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping: INFO
-    org.springframework.cloud.gateway: INFO
-    org.springframework.cloud.vault: INFO
     org.hibernate.SQL: INFO
     org.hibernate.type.descriptor.sql.BasicBinder: WARN
-    com.example.gatewayservice: INFO
     reactor.netty: INFO
     org.springframework.http.server.reactive: INFO

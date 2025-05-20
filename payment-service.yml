@@ -4,10 +4,10 @@ server:
 spring:
   application:
     name: payment-service
+
   r2dbc:
     url: r2dbc:mysql://localhost:3307/order
-    username: ${db-username}
-    password: ${db-password}
+
   cloud:
     function:
       definition: verified;rollBacked
@@ -32,19 +32,8 @@ spring:
             producer:
               transacted: true
 
-  rabbitmq:
-    host: localhost
-    port: 5672
-    username: ${rabbit-username}
-    password: ${rabbit-password}
-
 webclient:
-#  portone-uri: https://api.iamport.kr
   lecture-uri: http://localhost:9004
-
-#portone:
-#  imp-key: ${portone-imp-key}
-#  imp-secret: ${portone-imp-secret}
 
 springdoc:
   api-docs:

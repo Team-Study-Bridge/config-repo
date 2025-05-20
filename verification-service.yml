@@ -4,6 +4,7 @@ server:
 spring:
   application:
     name: verification-service
+
   cloud:
     function:
       definition: verify
@@ -14,15 +15,3 @@ spring:
           group: ${spring.application.name}
         verify-out-0:
           destination: verify-response
-  rabbitmq:
-    host: localhost
-    port: 5672
-    username: ${rabbit-username}
-    password: ${rabbit-password}
-
-#webclient:
-#  portone-uri: https://api.iamport.kr
-#
-#portone:
-#  imp-key: ${portone-imp-key}
-#  imp-secret: ${portone-imp-secret}
