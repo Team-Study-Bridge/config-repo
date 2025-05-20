@@ -6,8 +6,8 @@ spring:
     name: payment-service
   r2dbc:
     url: r2dbc:mysql://localhost:3307/order
-    username: ${vault.payment-service.db-username}
-    password: ${vault.payment-service.db-password}
+    username: ${db-username}
+    password: ${db-password}
   cloud:
     function:
       definition: verified;rollBacked
@@ -35,16 +35,16 @@ spring:
   rabbitmq:
     host: localhost
     port: 5672
-    username: ${vault.payment-service.rabbit-username}
-    password: ${vault.payment-service.rabbit-password}
+    username: ${rabbit-username}
+    password: ${rabbit-password}
 
 webclient:
   portone-uri: https://api.iamport.kr
   lecture-uri: http://localhost:9004
 
 portone:
-  imp-key: ${vault.payment-service.portone-imp-key}
-  imp-secret: ${vault.payment-service.portone-imp-secret}
+  imp-key: ${portone-imp-key}
+  imp-secret: ${portone-imp-secret}
 
 springdoc:
   api-docs:
