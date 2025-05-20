@@ -1,0 +1,22 @@
+spring:
+  profiles:
+    active: local
+
+  datasource:
+    url: jdbc:mysql://localhost:3307/user
+    username: ${db-username}
+    password: ${db-password}
+
+  mail:
+    username: ${mail-username}
+    password: ${mail-password}
+
+cloud:
+  aws:
+    credentials:
+      access-key: ${aws-access-key}
+      secret-key: ${aws-secret-key}
+
+naver:
+  client-id: ${naver-client-id}
+  client-secret: ${naver-client-secret}

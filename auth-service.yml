@@ -1,12 +1,6 @@
-server:
-  port: 9001
-
 spring:
   application:
     name: auth-service
-
-  datasource:
-    url: jdbc:mysql://localhost:3307/user    # 공통의 DB url을 오버라이드
 
   servlet:
     multipart:
@@ -16,8 +10,6 @@ spring:
   mail:
     host: smtp.gmail.com
     port: 587
-    username: ${mail-username}
-    password: ${mail-password}
     properties:
       mail:
         smtp:
@@ -31,13 +23,7 @@ cloud:
       bucket: aigongbu-profile-2324
 
 naver:
-  client-id: ${naver-client-id}
-  client-secret: ${naver-client-secret}
   redirect-uri: http://localhost:8080/login/oauth2/redirect
-
-jwt:
-  issuer: ${jwt-issuer}                # 공통에서 이미 정의돼 있다면 생략해도 됨(같으면)
-  secret_key: ${jwt-secret}
 
 badword:
   file-path: word_list.json

@@ -1,0 +1,32 @@
+spring:
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      password: ${redis-password}
+
+  datasource:
+    url: jdbc:mysql://localhost:3307/default
+    username: ${db-username}
+    password: ${db-password}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  cloud:
+    aws:
+      credentials:
+        access-key: ${aws-access-key}
+        secret-key: ${aws-secret-key}
+
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: ${rabbit-username}
+    password: ${rabbit-password}
+
+jwt:
+  issuer: ${jwt-issuer}
+  secret_key: ${jwt-secret}
+
+portone:
+  imp-key: ${portone-imp-key}
+  imp-secret: ${portone-imp-secret}

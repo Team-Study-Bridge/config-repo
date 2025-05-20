@@ -11,14 +11,13 @@ spring:
         size: 2
 
   datasource:
-    url: jdbc:mysql://localhost:3307/notitable
+    url: jdbc:mysql://localhost:3307/default   # 공통용 기본값
 
   kafka:
     bootstrap-servers: ${kafka-bootstrap-servers}
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
-
     consumer:
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       value-deserializer: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
@@ -43,7 +42,7 @@ firebase:
   service-account-json: ${firebase-service-account-json}
 
 team:
-  auth-service-url: http://localhost:9001
+  auth-service-url: ""   # 공통 템플릿. 각 환경에서 override
 
 aws:
   ses:
@@ -54,5 +53,5 @@ aws:
 
 logging:
   level:
-    org.mybatis: DEBUG
-    org.mybatis.spring.SqlSessionFactoryBean: DEBUG
+    org.mybatis: INFO
+    org.mybatis.spring.SqlSessionFactoryBean: INFO
