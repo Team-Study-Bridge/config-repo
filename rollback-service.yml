@@ -1,10 +1,9 @@
 server:
-  port: ${ROLLBACK_SERVICE_PORT}
-
+  port: 9007
+g
 spring:
   application:
     name: rollback-service
-
   cloud:
     function:
       definition: rollback
@@ -15,16 +14,15 @@ spring:
           group: ${spring.application.name}
         rollback-out-0:
           destination: rollback-response
-
   rabbitmq:
-    host: ${ROLLBACK_RABBITMQ_HOST}
-    port: ${ROLLBACK_RABBITMQ_PORT}
-    username: ${ROLLBACK_RABBITMQ_NAME}
-    password: ${ROLLBACK_RABBITMQ_PASSWORD}
+    host: localhost
+    port: 5672
+    username: ${rabbit-username}
+    password: ${rabbit-password}
 
 webclient:
-  portone-uri: ${PORTONE_URL}
+  portone-uri: https://api.iamport.kr
 
 portone:
-  imp-key: ${PORTONE_KEY}
-  imp-secret: ${PORTONE_SECRET}
+  imp-key: ${portone-imp-key}
+  imp-secret: ${portone-imp-secret}
