@@ -10,9 +10,6 @@ spring:
       pool:
         size: 2
 
-  datasource:
-    url: jdbc:mysql://localhost:3307/default   # 공통용 기본값
-
   kafka:
     bootstrap-servers: ${kafka-bootstrap-servers}
     producer:
@@ -41,17 +38,9 @@ firebase:
     private-key: ${firebase-vapid-private-key}
   service-account-json: ${firebase-service-account-json}
 
-team:
-  auth-service-url: ""   # 공통 템플릿. 각 환경에서 override
-
 aws:
   ses:
     region: ap-northeast-2
     accessKey: ${ses-access-key}
     secretKey: ${ses-secret-key}
     senderEmail: ${ses-sender-email}
-
-logging:
-  level:
-    org.mybatis: INFO
-    org.mybatis.spring.SqlSessionFactoryBean: INFO
