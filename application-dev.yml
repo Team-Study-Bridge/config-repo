@@ -1,0 +1,23 @@
+spring:
+  data:
+    redis:
+      host:
+      port:
+      password: ${redis-password}
+
+  datasource:
+    username: ${db-username}
+    password: ${db-password}
+
+  rabbitmq:
+    host:
+    port:
+    username: ${rabbit-username}
+    password: ${rabbit-password}
+
+logging:
+  level:
+    root: DEBUG
+    org.springframework.web: DEBUG
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: DEBUG

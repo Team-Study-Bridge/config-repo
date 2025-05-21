@@ -13,6 +13,8 @@ spring:
   mail:
     host: smtp.gmail.com
     port: 587
+    username: ${mail-username}
+    password: ${mail-password}
     properties:
       mail:
         smtp:
@@ -27,6 +29,8 @@ cloud:
 
 naver:
   redirect-uri: http://localhost:8080/login/oauth2/redirect
+  client-id: ${naver-client-id}
+  client-secret: ${naver-client-secret}
 
 badword:
   file-path: word_list.json

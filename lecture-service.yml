@@ -8,32 +8,20 @@ spring:
   servlet:
     multipart:
       enabled: true
-      max-file-size: 15MB
-      max-request-size: 15MB
+      max-file-size: 100MB
+      max-request-size: 100MB
 
   jpa:
     hibernate:
       ddl-auto: update
     show-sql: true
 
-  datasource:
-    url: jdbc:mysql://localhost:3307/default
-
 cloud:
   aws:
     stack:
       auto: false
     s3:
-      bucket: aigongbu-default-bucket
-
-file:
-  upload-dir: /tmp/uploads                     # 기본 템플릿, 환경마다 override
+      bucket: aigongbu-lecture-files
 
 team:
-  auth-service-url: ""
-
-logging:
-  level:
-    org.springframework.cloud.vault: INFO
-    org.hibernate.SQL: INFO
-    org.hibernate.type.descriptor.sql.BasicBinder: WARN
+  auth-service-url: http://localhost:9001
