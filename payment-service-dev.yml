@@ -1,0 +1,12 @@
+server:
+  port: 9002
+
+spring:
+  application:
+    name: payment-service
+
+  r2dbc:
+    url: r2dbc:mysql://localhost:3307/order
+
+webclient:
+  lecture-uri: http://localhost:9004

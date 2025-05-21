@@ -7,6 +7,8 @@ spring:
 
   r2dbc:
     url: r2dbc:mysql://localhost:3307/order
+    username: ${db-username}
+    password: ${db-password}
 
   cloud:
     function:
