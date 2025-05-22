@@ -1,3 +1,35 @@
+frontend-origin: ${frontend-origin}
+
+service:
+  lecture:
+    host: ${lecture-host}
+    port: ${lecture-port}
+  auth:
+    host: ${auth-host}
+    port: ${auth-port}
+  notibot:
+    host: ${notibot-host}
+    port: ${notibot-port}
+  gateway:
+    host: ${gateway-host}
+    port: ${gateway-port}
+  payment:
+    host: ${payment-host}
+    port: ${payment-port}
+  rollback:
+    host: ${rollback-host}
+    port: ${rollback-port}
+  verification:
+    host: ${verification-host}
+    port: ${verification-port}
+  ai-curriculum-analysis:
+    host: ${ai-curriculum-analysis-host}
+    port: ${ai-curriculum-analysis-port}
+  ai-chat:
+    host: ${ai-chat-host}
+    port: ${ai-chat-port}
+
+
 spring:
   jackson:
     default-property-inclusion: non_null

@@ -1,6 +1,6 @@
 server:
-  port:
+  port: ${auth-port}
 
 spring:
   datasource:
-    url:
+    url: jdbc:mysql://${auth-host}:${auth-port}/user

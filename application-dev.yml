@@ -1,19 +1,43 @@
+service:
+  front:
+    host: ${lecture-host}
+    port: 8080
+  lecture:
+    host: ${lecture-host}
+    port: 9004
+  auth:
+    host: ${auth-host}
+    port: 9001
+  notibot:
+    host: ${notibot-host}
+    port: 9006
+  gateway:
+    host: ${gateway-host}
+    port: 9000
+  payment:
+    host: ${payment-host}
+    port: 9002
+  rollback:
+    host: ${rollback-host}
+    port: 9007
+  verification:
+    host:
+    port: 9003
+  ai-curriculum-analysis:
+    host:
+    port: 8000
+  ai-chat:
+    host:
+    port: 8001
+
 spring:
   data:
     redis:
-      host:
-      port:
-      password: ${redis-password}
-
-  datasource:
-    username: ${db-username}
-    password: ${db-password}
+      host: 10.0.1.10  # 👉 Terraform으로 만든 Redis 서버 IP (예시)
 
   rabbitmq:
-    host:
-    port:
-    username: ${rabbit-username}
-    password: ${rabbit-password}
+    host: 10.0.1.11  # 👉 Terraform으로 만든 RabbitMQ 서버 IP (예시)
+    port: 5672
 
 logging:
   level:
