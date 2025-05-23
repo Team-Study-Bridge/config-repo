@@ -8,7 +8,7 @@ spring:
       max-request-size: 250MB
 
   datasource:
-    url: jdbc:mysql://localhost:3307/lecture?useUnicode=true&characterEncoding=utf8
+    url: jdbc:mysql://${***}:${auth-port}/lecture?useUnicode=true&characterEncoding=utf8
 
 team:
   auth-service-url: http://localhost:9001
