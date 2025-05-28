@@ -4,6 +4,9 @@ spring:
     redis:
       host: ${redis-host}
 
+  datasource:
+    url: jdbc:mysql://${db-host}:${db-port}/${db-name}
+
   rabbitmq:
     host: ${rabbit-host}
     port: ${rabbit-port}

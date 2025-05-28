@@ -12,7 +12,6 @@ spring:
       password: ${redis-password}
 
   datasource:
-    url: jdbc:mysql://${db-host}:${db-port}/${db-name}
     username: ${db-username}
     password: ${db-password}
     driver-class-name: com.mysql.cj.jdbc.Driver
