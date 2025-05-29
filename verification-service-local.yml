@@ -1,6 +1,20 @@
 server:
   port: 9003
-
 spring:
   application:
     name: verification-service
+  cloud:
+    function:
+      definition: verify
+    stream:
+      bindings:
+        verify-in-0:
+          destination: verify-request
+          group: ${spring.application.name}
+        verify-out-0:
+          destination: verify-response
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: 1234
+    password: 1234
