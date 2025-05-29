@@ -1,6 +1,26 @@
 server:
   port: 9007
-
 spring:
   application:
     name: rollback-service
+  r2dbc:
+    url: r2dbc:mysql://localhost:3307/order
+    username: root
+    password: 12341234
+  cloud:
+    function:
+      definition: rollback
+    stream:
+      bindings:
+        rollback-in-0:
+          destination: rollback-request
+          group: ${spring.application.name}
+        rollback-out-0:
+          destination: rollback-response
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: 12341234
+    password: 12341234
+webclient:
+  lecture-uri: http://localhost:9004

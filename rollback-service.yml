@@ -4,6 +4,8 @@ server:
 spring:
   application:
     name: rollback-service
+  r2dbc:
+    url: r2dbc:mysql://${db-host}:${db-port}/order
 
   cloud:
     function:
