@@ -1,5 +1,5 @@
 server:
-  port: 9004
+  port: 80
 
 spring:
   application:
@@ -24,4 +24,4 @@ cloud:
       bucket: aigongbu-lecture-files
 
 team:
-  auth-service-url: http://localhost:9001
+  auth-service-url: http://auth-service:80

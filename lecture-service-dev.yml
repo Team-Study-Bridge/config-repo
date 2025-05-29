@@ -1,5 +1,5 @@
 server:
-  port: 9004
+  port: 80
 
 spring:
   servlet:
@@ -8,10 +8,10 @@ spring:
       max-request-size: 250MB
 
   datasource:
-    url: jdbc:mysql://${***}:${auth-port}/lecture?useUnicode=true&characterEncoding=utf8
+    url: jdbc:mysql://${db-host}:${db-port}/lecture?useUnicode=true&characterEncoding=utf8
 
 team:
-  auth-service-url: http://localhost:9001
+  auth-service-url: http://auth-service:80
 
 logging:
   level:

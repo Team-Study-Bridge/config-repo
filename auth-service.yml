@@ -28,7 +28,7 @@ cloud:
       bucket: aigongbu-profile-2324
 
 naver:
-  redirect-uri: http://localhost:8080/login/oauth2/redirect
+  redirect-uri: https://himedia-b.com/login/oauth2/redirect
   client-id: ${naver-client-id}
   client-secret: ${naver-client-secret}
 
