@@ -1,12 +1,12 @@
 server:
-  port: 9002
+  port: 80
 
 spring:
   application:
     name: payment-service
 
   r2dbc:
-    url: r2dbc:mysql://localhost:3307/order
+    url: r2dbc:mysql://{db-host}:${db-port}:3306/order
 
 webclient:
-  lecture-uri: http://localhost:9004
+  lecture-uri: http://lecture-service:80
