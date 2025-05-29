@@ -5,6 +5,8 @@ spring:
     name: rollback-service
   r2dbc:
     url: r2dbc:mysql://${db-host}:${db-port}/order
+    username: ${db-username}
+    password: ${db-password}
   cloud:
     function:
       definition: rollback
