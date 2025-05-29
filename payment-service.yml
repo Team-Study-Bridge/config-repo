@@ -35,7 +35,7 @@ spring:
               transacted: true
 
 webclient:
-  lecture-uri: ""   # 환경별로 덮어쓰기
+  lecture-uri: http://lecture-service:80
 
 springdoc:
   api-docs:
