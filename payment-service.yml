@@ -6,7 +6,7 @@ spring:
     name: payment-service
 
   r2dbc:
-    url: r2dbc:mysql://{db-host}:${db-port}:3306/order
+    url: r2dbc:mysql://${db-host}:${db-port}/order
     username: ${db-username}
     password: ${db-password}
 
