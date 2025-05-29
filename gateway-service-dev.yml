@@ -21,27 +21,6 @@ spring:
         connect-timeout: 5000
         response-timeout: 180s
 
-      routes:
-        - id: auth-service
-          uri: http://${auth-host}:${auth-port}
-
-        - id: payment-service
-          uri: http://${payment-host}:${payment-port}
-
-        - id: lecture-service
-          uri: http://${lecture-host}:${lecture-port}
-
-        - id: notibot-service
-          uri: http://${notibot-host}:${notibot-port}
-
-        - id: ai-curriculum-analysis-service
-          uri: http://${ai-curriculum-analysis-host}:${ai-curriculum-analysis-port}
-
-        - id: ai-chat-websocket
-          uri: ws://${ai-chat-host}:${ai-chat-port}
-
-        - id: ai-chat
-          uri: http://${ai-chat-host}:${ai-chat-port}
 
 team:
   auth-service-url: http://${auth-host}:${auth-port}
