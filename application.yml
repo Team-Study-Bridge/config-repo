@@ -41,7 +41,7 @@ jwt:
   issuer: ${jwt-issuer}
   secret_key: ${jwt-secret}
 
-logging:
-  level:
-    root: INFO
-    org.springframework.web: INFO
+#logging:
+#  level:
+#    root: INFO
+#    org.springframework.web: INFO

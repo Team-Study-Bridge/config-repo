@@ -11,9 +11,9 @@ spring:
     host: ${rabbit-host}
     port: ${rabbit-port}
 
-logging:
-  level:
-    root: DEBUG
-    org.springframework.web: DEBUG
-    org.hibernate.SQL: DEBUG
-    org.hibernate.type.descriptor.sql.BasicBinder: DEBUG
+#logging:
+#  level:
+#    root: DEBUG
+#    org.springframework.web: DEBUG
+#    org.hibernate.SQL: DEBUG
+#    org.hibernate.type.descriptor.sql.BasicBinder: DEBUG
