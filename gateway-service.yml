@@ -60,10 +60,10 @@ spring:
           filters:
             - name: PreGatewayFilter
             - name: RequestRateLimiter
-              args:
-                redis-rate-limiter.replenishRate: 5
-                redis-rate-limiter.burstCapacity: 10
-                key-resolver: "#{@smartKeyResolver}"
+#              args:
+#                redis-rate-limiter.replenishRate: 5
+##                redis-rate-limiter.burstCapacity: 10
+#                key-resolver: "#{@smartKeyResolver}"
             - name: CircuitBreaker
               args:
                 name: orderCircuitBreaker
