@@ -59,7 +59,7 @@ spring:
             - Path=/lectures/**
           filters:
             - name: PreGatewayFilter
-            - name: RequestRateLimiter
+#            - name: RequestRateLimiter
 #              args:
 #                redis-rate-limiter.replenishRate: 5
 ##                redis-rate-limiter.burstCapacity: 10
