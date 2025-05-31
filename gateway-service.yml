@@ -86,7 +86,7 @@ spring:
                 fallbackUri: forward:/fallback/static
 
         - id: ai-curriculum-analysis-service
-          uri: http://ai-curriculum-analysis-service:80
+          uri: http://ai-curriculum-analysis-service:8000
           predicates:
             - Path=/ai/**
           filters:
@@ -102,12 +102,12 @@ spring:
                 fallbackUri: forward:/fallback/static
 
         - id: ai-chat-websocket
-          uri: ws://ai-chat-websocket:80
+          uri: ws://ai-chat-websocket:8001
           predicates:
             - Path=/aichat/websocket
 
         - id: ai-chat
-          uri: http://ai-chat:80
+          uri: http://ai-chat:8001
           predicates:
             - Path=/aichat/**
           filters:
@@ -137,11 +137,3 @@ resilience4j:
 
 team:
   auth-service-url: http://auth-service:80
-
-logging:
-  level:
-    org.springframework.cloud.gateway: DEBUG
-    org.springframework.web.reactive: DEBUG
-    com.example.gatewayservice: DEBUG
-    reactor.netty: DEBUG
-    org.springframework.http.server.reactive: DEBUG
