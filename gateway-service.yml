@@ -85,8 +85,8 @@ spring:
                 name: orderCircuitBreaker
                 fallbackUri: forward:/fallback/static
 
-        - id: ai-curriculum-analysis-service
-          uri: http://ai-curriculum-analysis-service:80
+        - id: ai-curriculum-analysis-server
+          uri: http://ai-curriculum-analysis-server:80
           predicates:
             - Path=/ai/**
           filters:
