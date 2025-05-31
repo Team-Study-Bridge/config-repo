@@ -102,12 +102,12 @@ spring:
                 fallbackUri: forward:/fallback/static
 
         - id: ai-chat-websocket
-          uri: ws://ai-chat-websocket:8001
+          uri: ws://ai-chat-websocket:80
           predicates:
             - Path=/aichat/websocket
 
         - id: ai-chat
-          uri: http://ai-chat:8001
+          uri: http://ai-chat:80
           predicates:
             - Path=/aichat/**
           filters:
