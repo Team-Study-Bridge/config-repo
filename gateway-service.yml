@@ -101,43 +101,10 @@ spring:
                 name: orderCircuitBreaker
                 fallbackUri: forward:/fallback/static
 
-        - id: ai-code-helper
-          uri: http://ai-code-helper:80
-          predicates:
-            - Path=/ai/**
-          filters:
-            - name: PreGatewayFilter
-            - name: RequestRateLimiter
-              args:
-                redis-rate-limiter.replenishRate: 10  # Increased for AI service
-                redis-rate-limiter.burstCapacity: 20
-                key-resolver: "#{@smartKeyResolver}"
-            - name: CircuitBreaker
-              args:
-                name: aiCircuitBreaker
-                fallbackUri: forward:/fallback/static
-        - id: ai-code-helper
-          uri: ws://ai-code-helper:80
-          predicates:
-            - Path=/aichat/websocket
-          filters:
-            - name: RequestRateLimiter
-              args:
-                redis-rate-limiter.replenishRate: 10
-                redis-rate-limiter.burstCapacity: 20
-                key-resolver: "#{@smartKeyResolver}"
-
-              # WebSocket route for AI chat - ensure this comes before the regular aichat route
         - id: ai-chat-websocket
           uri: ws://ai-chat-websocket:80
           predicates:
             - Path=/aichat/websocket
-          filters:
-            - name: RequestRateLimiter
-              args:
-                redis-rate-limiter.replenishRate: 10
-                redis-rate-limiter.burstCapacity: 20
-                key-resolver: "#{@smartKeyResolver}"
 
         - id: ai-chat
           uri: http://ai-chat:80
@@ -147,12 +114,12 @@ spring:
             - name: PreGatewayFilter
             - name: RequestRateLimiter
               args:
-                redis-rate-limiter.replenishRate: 10  # Increased for AI chat
-                redis-rate-limiter.burstCapacity: 20
+                redis-rate-limiter.replenishRate: 5
+                redis-rate-limiter.burstCapacity: 10
                 key-resolver: "#{@smartKeyResolver}"
             - name: CircuitBreaker
               args:
-                name: aiChatCircuitBreaker
+                name: aiWebSocketCircuitBreaker
                 fallbackUri: forward:/fallback/static
 
 resilience4j:
