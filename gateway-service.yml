@@ -119,7 +119,7 @@ spring:
 
               # WebSocket route for AI chat - ensure this comes before the regular aichat route
             - id: ai-chat-websocket
-              uri: ws://ai-chat-websocket:80
+              uri: ws://ai-code-helper:80
               predicates:
                 - Path=/aichat/websocket
               filters:
@@ -130,7 +130,7 @@ spring:
                     key-resolver: "#{@smartKeyResolver}"
 
             - id: ai-chat
-              uri: http://ai-chat:80
+              uri: http://ai-code-helper:80
               predicates:
                 - Path=/aichat/**
               filters:
