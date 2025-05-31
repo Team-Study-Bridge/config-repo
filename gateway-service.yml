@@ -86,7 +86,7 @@ spring:
                 fallbackUri: forward:/fallback/static
 
         - id: ai-curriculum-analysis-service
-          uri: http://ai-curriculum-analysis-service:8000
+          uri: http://ai-curriculum-analysis-service:80
           predicates:
             - Path=/ai/**
           filters:
