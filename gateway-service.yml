@@ -116,6 +116,16 @@ spring:
               args:
                 name: aiCircuitBreaker
                 fallbackUri: forward:/fallback/static
+        - id: ai-code-helper
+          uri: ws://ai-code-helper:80
+          predicates:
+            - Path=/aichat/websocket
+          filters:
+            - name: RequestRateLimiter
+              args:
+                redis-rate-limiter.replenishRate: 10
+                redis-rate-limiter.burstCapacity: 20
+                key-resolver: "#{@smartKeyResolver}"
 
               # WebSocket route for AI chat - ensure this comes before the regular aichat route
         - id: ai-chat-websocket
