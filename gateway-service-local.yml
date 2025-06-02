@@ -23,7 +23,7 @@ spring:
 
       routes:
         - id: auth-service
-          uri: http://localhost:9000
+          uri: http://localhost:9001
           predicates:
             - Path=/auths/**
           filters:
