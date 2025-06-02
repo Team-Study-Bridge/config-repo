@@ -13,8 +13,3 @@ spring:
           group: ${spring.application.name}
         verify-out-0:
           destination: verify-response
-  rabbitmq:
-    host: localhost
-    port: 5672
-    username: 1234
-    password: 1234
