@@ -3,11 +3,16 @@ spring:
   data:
     redis:
       host: ${redis-host}
+      password: ${redis-password}
 
   datasource:
+    username: ${db-username}
+    password: ${db-password}
     url: jdbc:mysql://${db-host}:${db-port}/${db-name}
 
   rabbitmq:
+    username: ${rabbit-username}
+    password: ${rabbit-password}
     host: ${rabbit-host}
     port: ${rabbit-port}
 

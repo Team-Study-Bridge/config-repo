@@ -1,4 +1,3 @@
-frontend-origin: ${frontend-origin}
 
 spring:
   jackson:
@@ -9,16 +8,10 @@ spring:
 
   data:
     redis:
-      password: ${redis-password}
+      port: 6397
 
   datasource:
-    username: ${db-username}
-    password: ${db-password}
     driver-class-name: com.mysql.cj.jdbc.Driver
-
-  rabbitmq:
-    username: ${rabbit-username}
-    password: ${rabbit-password}
 
   cloud:
     aws:
