@@ -17,10 +17,5 @@ spring:
           group: ${spring.application.name}
         rollback-out-0:
           destination: rollback-response
-  rabbitmq:
-    host: localhost
-    port: 5672
-    username: 12341234
-    password: 12341234
 webclient:
   lecture-uri: http://localhost:9004
