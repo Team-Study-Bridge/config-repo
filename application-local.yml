@@ -2,7 +2,6 @@ spring:
   data:
     redis:
       host: localhost
-      port: 6397
       password: 12341234
 
   datasource:
