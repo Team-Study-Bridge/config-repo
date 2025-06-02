@@ -3,6 +3,7 @@ spring:
   data:
     redis:
       host: ${redis-host}
+      port: 6397
       password: ${redis-password}
 
   datasource:
